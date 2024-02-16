@@ -3,7 +3,7 @@
   <img src="imgs/verilogTraining.png" width="100%" title="verilog">
 </p>
 
-This repo contains the Verilog Training I started as a side project during my thesis journey at Nokia. To write this down, I'm using and following Jaywant's explanations and invaluable experience in the field. 
+This repo contains the Verilog Training I started as a side project during my thesis journey at Nokia. To write this down, I'm using and following Jaywant's explanations and invaluable experience in the field.  
 
 ---
 
