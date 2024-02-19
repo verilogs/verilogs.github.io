@@ -203,7 +203,22 @@ img {vertical-align: middle;}
 <span class="menugroup"><a href="../pages/ch2.html#t1" class="menubutton selected" title="">Task1: <br/>mux_2</a><a href="../pages/ch2.html#t2" class="menubutton" title=" ">Task2: <br/>mux_4</a><a href="../pages/ch2.html#t3" class="menubutton" title=" ">Task3: <br/>mux_8</a><a href="../pages/ch2.html#t4" class="menubutton" title=" ">Task4: <br/>mux_16</a></span>
 
 </div>
-
+<div class="example">                
+<h3>Notes:</h3>
+<ul><li><p align="justify"><b>Combinational logic</b> <br />Combinational logic is a type of digital logic where the output is solely determined by the current inputs, without any memory of past inputs. This contrasts with <b>sequential logic</b> , where outputs can be influenced by previous states and inputs, essentially having memory. Combinational logic circuits perform operations based on Boolean algebra and are fundamental in creating circuits like adders, multiplexers, and arithmetic logic units (ALUs).</p>
+    <p align="justify"> It refers to the type of logic circuits or expressions that result from continuous assignments or procedural blocks like always_comb. It represents a class of digital circuits built using basic logic gates (AND, OR, NOT, etc.) and does not involve any timing elements like flip-flops or latches</p></li></ul>
+<div class="example">
+<p align="justify"><strong>always_comb</strong><br /><span style="background-color: #dcdcdc">always_comb</span> is a procedural block that is intended for combinational logic. It allows for more complex expressions and multiple assignments within the same block. It’s sensitive to all changes in the variables used within the block, ensuring that the logic is always up-to-date with the current inputs. It also infers a complete sensitivity list automatically, which means you don’t need to specify which signals it should react to.</p>
+<p align="justify"><strong>Continuous assignment</strong><br />Continuous assignment with <span style="background-color: #dcdcdc">assign</span> is used for simpler, direct assignments. It’s a declarative statement that continuously assigns a value to a wire based on an expression. It’s typically used for straightforward expressions and can only define one signal with one equation at a time.</p>  
+    <p align="justify">It’s used to model combinational logic, which is logic that computes outputs solely based on the current inputs without any memory or storage elements. Continuous assignment statements are always active and reflect changes in the inputs immediately.</p>
+    <center>
+<figure><img src="../imgs/ch2_0_1.png" style="width:100%">
+    <figcaption><p align="justify">Fig.0 - always_comb VS continues assignment: <b>combinational logic</b> is generally used for more complex combinational logic where multiple assignments or more expressive logic is needed, while <b>assign</b> is used for simpler, direct wire assignments. Both result in combinational logic without storage elements, but always_comb can offer more expressiveness and is more explicit in its intent to represent combinational logic.</p><p align="justify">The first module uses a procedural block (always_comb), which is triggered whenever any of the inputs change. It uses an if statement to explicitly check the value of sel and assign y to either a or b accordingly. This is a more traditional style of writing hardware logic in Verilog, similar to writing software.</p><p align="justify">The second module uses a continuous assignment (assign) statement, which is a declarative way of defining the relationship between inputs and outputs. It uses bitwise operations to determine the value of y based on sel, a, and b. This style is more concise and often preferred for simple combinational logic as it can be easier to read and understand.</p></figcaption>
+</figure>
+</center>
+</div>
+</div>
+            
 <div id="maintitle"><h1 id="t1">Task 1: <a href="">mux_2</a></h1></div>
 </div>
             
@@ -234,7 +249,7 @@ img {vertical-align: middle;}
 <figcaption>Fig.3 - Testbench structure.</figcaption>
 </figure>
 </center>
-<center>
+ <center>
 <figure><img src="../imgs/ch2_1_4.png" style="width:60%">
 <figcaption>Fig.4 - Module code.</figcaption>
 </figure>
@@ -243,11 +258,13 @@ img {vertical-align: middle;}
 <figure><img src="../imgs/ch2_1_5.png" style="width:60%">
 <figcaption>Fig.4 - Testbench code.</figcaption>
 </figure>
-</center>
+</center>                      
+
+</div>                
+
                 
 <div id="maintitle"><h1 id="t2">Task 2: <a href="">mux_4</a></h1></div>
-</div>
-            
+
 <div id="body">
     
 <strong>Functionality: </strong>
