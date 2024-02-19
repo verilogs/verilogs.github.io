@@ -3,12 +3,12 @@
 <html lang="en" prefix="og: http://ogp.me/ns#">
     <head>
         <title>SystemVerilog Training </title>
-        <link href="https://upload.wikimedia.org/wikipedia/commons/5/5a/-----logo.svg" rel="icon">
+        <link href="../imgs/icon.svg" rel="icon">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700%7CRoboto+Slab:700%7CRoboto:400,400i,700" rel="stylesheet"><link href="../dltorch.css" rel="stylesheet" type="text/css">
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <meta content="./" property="og:url">
-        <meta content="imgs/icon.png" property="og:image">
+        <meta content="../imgs/icon.svg" property="og:image">
         <meta content="SystemVerilog Training" property="og:title">
         <meta content="SystemVerilog Training" property="og:description">
         <meta content="article" property="og:type">
@@ -209,39 +209,50 @@ img {vertical-align: middle;}
             
             <div id="body">
     
-<p align="justify">In this exercise you are required to implement an 2-input AND gate with the following input, output and functionalities.</p>
+<p align="justify">In this exercise, you are required to implement a 2-input multiplexer (MUX) with the following input, output, and functionalities.</p>
 <center>
 <figure><img src="../imgs/ch2_1_1.png" style="width:30%">
-<figcaption>Fig.1 - 2-input AND gate.</figcaption>
+<figcaption>Fig.1 - 2-input Multiplexer (MUX).</figcaption>
 </figure>
 </center>
 <center>
 <figure><img src="../imgs/ch2_1_2.png" style="width:30%">
-<figcaption>Fig.2 - Truth Table of 2-input AND gate.</figcaption>
+<figcaption>Fig.2 - Truth Table of 2-input MUX.</figcaption>
 </figure>
 </center>
 
 <strong>Inputs:</strong> 
-<p align="justify">The inputs to the AND gate are 1 bit wide and are named "a" and "b" as <b>input a; input b;</b>. </p>
+<p align="justify">The inputs to the MUX are 1 bit wide and are named "a", "b", and "sel" where "a" and "b" are data inputs and "sel" is the selection input.</p>
 <strong>Output:</strong> 
-<p align="justify">The output of the AND gate is a single bit and is named "y" assigning <b>y = a && b</b>. </p>
+<p align="justify">The output of the MUX is a single bit and is named "y", assigning y = (sel & a) | (~sel & b).</p>
 <strong>Functionality: </strong>
-<p align="justify">An AND gate outputs a logical 1 (or "true") only when both its inputs are 1.</p>
+<p align="justify">A multiplexer outputs the value of either "a" or "b" based on the value of the selection input "sel". If "sel" is 0, the output is equal to "b"; if "sel" is 1, the output is equal to "a".</p>
 <strong>Testbench:</strong>
-<p align="justify">You need to create a module and define its name, outputs and inputs. The module name can be and_2 with a, b variables as its inputs and y as its output. Then you should also define the equation between output and input using the assign command. After creating an AND gate, to test your module you need to create a test bench module which instantiate the AND gate inside it with a certain name. There you need to specify the inputs and outputs type (<b>logic</b>) and attach (wire) them to the instantiated AND gate. After this, you need to give different values to input variables as well as some delay time (using <b>#100 ns</b>) to see the output changes over time withing the input changes.</p>
+<p align="justify">You need to create a module and define its name, outputs, and inputs. The module name can be mux_2 with "a", "b", and "sel" variables as its inputs and "y" as its output. Then you should also define the equation between output and input using the assign command. After creating a MUX, to test your module, you need to create a testbench module which instantiates the MUX inside it with a certain name. There you need to specify the input and output types (logic) and attach (wire) them to the instantiated MUX. After this, you need to give different values to input variables as well as some delay time (using #100 ns) to see the output changes over time within the input changes.</p>
 <center>
 <figure><img src="../imgs/ch2_1_3.png" style="width:60%">
 <figcaption>Fig.3 - Testbench structure.</figcaption>
 </figure>
 </center>
-
+<center>
+<figure><img src="../imgs/ch2_1_4.png" style="width:60%">
+<figcaption>Fig.4 - Module code.</figcaption>
+</figure>
+</center>
+<center>
+<figure><img src="../imgs/ch2_1_5.png" style="width:60%">
+<figcaption>Fig.4 - Testbench code.</figcaption>
+</figure>
+</center>
                 
 <div id="maintitle"><h1 id="t2">Task 2: <a href="">mux_4</a></h1></div>
 </div>
             
 <div id="body">
     
-<p align="justify">In this exercise you are required to implement an 2-input AND gate with the following input, output and functionalities.</p>
+<strong>Functionality: </strong>
+<p align="justify">The multiplexer selects one of the 4 inputs based on the 2-bit selection signal sel and outputs it through y. The testbench applies different input combinations and observes the output y after a delay of 100 time units.</p>
+
 <center>
 <figure><img src="../imgs/ch2_2_1.png" style="width:30%">
 <figcaption>Fig.1 - 2-input AND gate.</figcaption>
@@ -252,20 +263,12 @@ img {vertical-align: middle;}
 <figcaption>Fig.2 - Truth Table of 2-input AND gate.</figcaption>
 </figure>
 </center>
-
-<strong>Inputs:</strong> 
-<p align="justify">The inputs to the AND gate are 1 bit wide and are named "a" and "b" as <b>input a; input b;</b>. </p>
-<strong>Output:</strong> 
-<p align="justify">The output of the AND gate is a single bit and is named "y" assigning <b>y = a && b</b>. </p>
-<strong>Functionality: </strong>
-<p align="justify">An AND gate outputs a logical 1 (or "true") only when both its inputs are 1.</p>
-<strong>Testbench:</strong>
-<p align="justify">You need to create a module and define its name, outputs and inputs. The module name can be and_2 with a, b variables as its inputs and y as its output. Then you should also define the equation between output and input using the assign command. After creating an AND gate, to test your module you need to create a test bench module which instantiate the AND gate inside it with a certain name. There you need to specify the inputs and outputs type (<b>logic</b>) and attach (wire) them to the instantiated AND gate. After this, you need to give different values to input variables as well as some delay time (using <b>#100 ns</b>) to see the output changes over time withing the input changes.</p>
 <center>
 <figure><img src="../imgs/ch2_2_3.png" style="width:60%">
 <figcaption>Fig.3 - Testbench structure.</figcaption>
 </figure>
 </center>
+    
                 
                 
                 <div id="maintitle"><h1 id="t3">Task 3: <a href="">mux_8</a></h1></div>
@@ -285,14 +288,7 @@ img {vertical-align: middle;}
 </figure>
 </center>
 
-<strong>Inputs:</strong> 
-<p align="justify">The inputs to the AND gate are 1 bit wide and are named "a" and "b" as <b>input a; input b;</b>. </p>
-<strong>Output:</strong> 
-<p align="justify">The output of the AND gate is a single bit and is named "y" assigning <b>y = a && b</b>. </p>
-<strong>Functionality: </strong>
-<p align="justify">An AND gate outputs a logical 1 (or "true") only when both its inputs are 1.</p>
-<strong>Testbench:</strong>
-<p align="justify">You need to create a module and define its name, outputs and inputs. The module name can be and_2 with a, b variables as its inputs and y as its output. Then you should also define the equation between output and input using the assign command. After creating an AND gate, to test your module you need to create a test bench module which instantiate the AND gate inside it with a certain name. There you need to specify the inputs and outputs type (<b>logic</b>) and attach (wire) them to the instantiated AND gate. After this, you need to give different values to input variables as well as some delay time (using <b>#100 ns</b>) to see the output changes over time withing the input changes.</p>
+
 <center>
 <figure><img src="../imgs/ch2_3_3.png" style="width:60%">
 <figcaption>Fig.3 - Testbench structure.</figcaption>
@@ -316,14 +312,6 @@ img {vertical-align: middle;}
 </figure>
 </center>
 
-<strong>Inputs:</strong> 
-<p align="justify">The inputs to the AND gate are 1 bit wide and are named "a" and "b" as <b>input a; input b;</b>. </p>
-<strong>Output:</strong> 
-<p align="justify">The output of the AND gate is a single bit and is named "y" assigning <b>y = a && b</b>. </p>
-<strong>Functionality: </strong>
-<p align="justify">An AND gate outputs a logical 1 (or "true") only when both its inputs are 1.</p>
-<strong>Testbench:</strong>
-<p align="justify">You need to create a module and define its name, outputs and inputs. The module name can be and_2 with a, b variables as its inputs and y as its output. Then you should also define the equation between output and input using the assign command. After creating an AND gate, to test your module you need to create a test bench module which instantiate the AND gate inside it with a certain name. There you need to specify the inputs and outputs type (<b>logic</b>) and attach (wire) them to the instantiated AND gate. After this, you need to give different values to input variables as well as some delay time (using <b>#100 ns</b>) to see the output changes over time withing the input changes.</p>
 <center>
 <figure><img src="../imgs/ch2_4_3.png" style="width:60%">
 <figcaption>Fig.3 - Testbench structure.</figcaption>
