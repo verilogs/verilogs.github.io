@@ -190,7 +190,39 @@ img {vertical-align: middle;}
 <div id="body">
 <p>This repo contains the <strong>SystemVerilog</strong> training I started as a side project during my thesis journey at Nokia. To write this down, I'm using and following Jaywant's explanations and invaluable experience in the field.</p>
 <p align="justify"><em>Acknowledgements:</em> It is worth mentioning that the CSS code for creating this repo is exactly extracted from the great <a href="https://ppc.cs.aalto.fi/">PPC</a> course @ Aalto University. The only difference however is just modifying the CSS code a little bit to add a slideshow functionality to it as well as changing the coloring style.</p>
+    
+<div class="example">
+    <h3>Notes:</h3>
+    <p align="justify">The digital design flow of a DSP (Digital Signal Processor) accelerator typically involves several key stages:</p>
+<ol><li><b>Specification:</b> <br />Defining the functional requirements and performance goals of the DSP accelerator. </li>
+    <li><b>Algorithm Development:</b> <br />Creating and simulating algorithms that meet the specifications, often using high-level tools like MATLAB. </li>
+    <li><b>Modeling and Simulation:</b> <br />Developing a high-level model, usually in SystemVerilog or VHDL, and simulating it to verify functionality. </li>
+    <li><b>Synthesis:</b> <br />Translating the high-level model into a gate-level netlist using synthesis tools. </li>
+    <li><b>Place and Route:</b> <br /> Arranging the synthesized gates on the silicon and routing the connections between them.</li>
+    <li><b>Verification:</b> <br /> Ensuring the design meets all specifications and performs correctly through extensive testing.</li>
+    <li><b>Physical Design:</b> <br />Finalizing the layout for fabrication, including considerations for timing, power, and area. </li>
+    <li><b>Fabrication:</b> <br /> Manufacturing the physical chip based on the design.</li>
+        <li><b>Testing and Validation:</b> <br />Post-fabrication testing to ensure the chip operates as intended. </li>
+        <li><b>Integration:</b> <br /> Embedding the DSP accelerator into the target system and performing final system-level testing</li></ol>
+    
+<div class="example">
+    <center>
+<figure><img src="imgs/workflow.png" style="width:80%">
+<figcaption>Fig.0 - Digital Hardware Design Workflow.</figcaption>
+</figure>
+</center>
+</div>                          
+</div>
+    <p><a href="#maintitle">Verilog</a></p>
+    Verilog is a hardware description language used to model electronic systems, primarily at the register-transfer level, and now a subset of SystemVerilog.
+    <p><a href="#maintitle">RTL (Register-Transfer Level)</a></p>
+    RTL (Register-Transfer Level) is a design abstraction which models a synchronous digital circuit in terms of the flow of digital signals (data) between hardware registers, and the logical operations performed on those signals. <strong>RTL: Synthesizable HDL/Verilog code</strong>
+    <p><a href="#maintitle">Gate Level Netlist</a></p>
+    Gate Level Netlist: A detailed textual representation of a circuit, describing the exact gates and connections between them used to implement the circuit’s design
+    <p><a href="#maintitle">Synthesis</a></p>
+    Synthesis is he process in digital design that converts high-level abstract descriptions of circuits into optimized gate-level representations suitable for implementation.
 <p><a href="#maintitle">SystemVerilog</a></p>
+    SystemVerilog is an extensive hardware description and verification language that enhances and extends Verilog with additional features for modeling, design, and testing of electronic systems. <strong>SystemVerilog comes with different always_ff/always_comb/always_latch block which makes the chance for RTL to Gate level (post synthesis) mismatch to be reduced. Verilog only has one general always block which makes synthesis not optimal.</strong>
 <p align="justify">Verilog is an HDL, while SystemVerilog is a superset of Verilog that contains additional constructs useful for verifying designs. It is often referred to as a hardware design and verification language rather than an HDL.  HDLs provide a way to specify design behavior without specifying implementation. Using an HDL, designers can operate at a higher level of abstraction and verify the design before hardware is constructed. Once verified, the HDL code can be synthesized into a technology-specific gate-level implementation through logic synthesis. This process is shown in Figure 1.</p>
 <center>
 <figure><img src="imgs/hdl_flow.png" style="width:30%">
