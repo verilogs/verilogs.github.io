@@ -273,20 +273,26 @@ img {vertical-align: middle;}
     
 <strong>Functionality: </strong>
 <p align="justify">The multiplexer selects one of the 4 inputs based on the 2-bit selection signal sel and outputs it through y. The testbench applies different input combinations and observes the output y after a delay of 100 time units.</p>
+    <p align="justify">4-input multiplexer can be also implemented using 3 2-input multiplexers as implemented above as shown in figure 2.2. Try to implement the mux_4 block in both ways.</p>
 
 <center>
-<figure><img src="../imgs/ch2_2_1.png" style="width:30%">
-<figcaption>Fig.1 - 2-input AND gate.</figcaption>
+<figure><img src="../imgs/ch2_2_1.png" style="width:40%">
+<figcaption>Fig.2.1 - 4-input Mux gate.</figcaption>
 </figure>
 </center>
 <center>
-<figure><img src="../imgs/ch2_2_2.png" style="width:30%">
-<figcaption>Fig.2 - Truth Table of 2-input AND gate.</figcaption>
+<figure><img src="../imgs/ch2_2_2.png" style="width:70%">
+<figcaption>Fig.2.2 - 4-input Mux gate using a combination of 2-input muxes .</figcaption>
 </figure>
 </center>
 <center>
-<figure><img src="../imgs/ch2_2_3.png" style="width:60%">
-<figcaption>Fig.3 - Testbench structure.</figcaption>
+<figure><img src="../imgs/ch2_2_3.png" style="width:45%">
+<figcaption>Fig.2.3 - Truth Table of 4-input Mux gate.</figcaption>
+</figure>
+</center>
+<center>
+<figure><img src="../imgs/ch2_2_4.png" style="width:100%">
+<figcaption>Fig.2.4 - Testbench structure (right: combination of mux_2s, left: single mux_4).</figcaption>
 </figure>
 </center>
     
@@ -297,15 +303,27 @@ img {vertical-align: middle;}
             
             <div id="body">
     
-<p align="justify">In this exercise you are required to implement an 2-input AND gate with the following input, output and functionalities.</p>
+<strong>Functionality: </strong>
+<p align="justify">The multiplexer selects one of the 8 inputs based on the 3-bit selection signal sel and outputs it through y. The testbench applies different input combinations and observes the output y after a delay of 100 time units.</p>
+    <p align="justify">8-input multiplexer can be also implemented using 5 2-input multiplexers as shown in figure 3.2 or a combination of 2 4-input muxes together with a single 2-input mux as shown in figure 3.3. Try to implement the mux_4 block in both ways.</p>
 <center>
-<figure><img src="../imgs/ch2_3_1.png" style="width:30%">
-<figcaption>Fig.1 - 2-input AND gate.</figcaption>
+<figure><img src="../imgs/ch2_3_1.png" style="width:40%">
+<figcaption>Fig.3.1 - 8-input Mux gate.</figcaption>
 </figure>
 </center>
 <center>
-<figure><img src="../imgs/ch2_3_2.png" style="width:30%">
-<figcaption>Fig.2 - Truth Table of 2-input AND gate.</figcaption>
+<figure><img src="../imgs/ch2_3_2.png" style="width:80%">
+<figcaption>Fig.3.2 - 8-input Mux gate using a combination of 2-input muxes .</figcaption>
+</figure>
+</center>
+<center>
+<figure><img src="../imgs/ch2_3_3.png" style="width:70%">
+<figcaption>Fig.3.2 - 8-input Mux gate using a combination of 4-input muxes and a single 2-input mux.</figcaption>
+</figure>
+</center>                
+<center>
+<figure><img src="../imgs/ch2_3_4.png" style="width:30%">
+<figcaption>Fig.3.3 - Truth Table of 2-input AND gate.</figcaption>
 </figure>
 </center>
 
