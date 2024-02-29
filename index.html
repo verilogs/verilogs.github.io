@@ -213,34 +213,90 @@ img {vertical-align: middle;}
 </center>
 </div>                          
 </div>
-    <p><a href="#maintitle">Verilog</a></p>
-    Verilog is a hardware description language used to model electronic systems, primarily at the register-transfer level, and now a subset of SystemVerilog.
-    <p><a href="#maintitle">RTL (Register-Transfer Level)</a></p>
-    RTL (Register-Transfer Level) is a design abstraction which models a synchronous digital circuit in terms of the flow of digital signals (data) between hardware registers, and the logical operations performed on those signals. <strong>RTL: Synthesizable HDL/Verilog code</strong>
-    <p><a href="#maintitle">Gate Level Netlist</a></p>
-    Gate Level Netlist: A detailed textual representation of a circuit, describing the exact gates and connections between them used to implement the circuit’s design
-    <p><a href="#maintitle">Synthesis</a></p>
-    Synthesis is he process in digital design that converts high-level abstract descriptions of circuits into optimized gate-level representations suitable for implementation.
-<p><a href="#maintitle">SystemVerilog</a></p>
-    SystemVerilog is an extensive hardware description and verification language that enhances and extends Verilog with additional features for modeling, design, and testing of electronic systems. <strong>SystemVerilog comes with different always_ff/always_comb/always_latch block which makes the chance for RTL to Gate level (post synthesis) mismatch to be reduced. Verilog only has one general always block which makes synthesis not optimal.</strong>
-<p align="justify">Verilog is an HDL, while SystemVerilog is a superset of Verilog that contains additional constructs useful for verifying designs. It is often referred to as a hardware design and verification language rather than an HDL.  HDLs provide a way to specify design behavior without specifying implementation. Using an HDL, designers can operate at a higher level of abstraction and verify the design before hardware is constructed. Once verified, the HDL code can be synthesized into a technology-specific gate-level implementation through logic synthesis. This process is shown in Figure 1.</p>
-<center>
-<figure><img src="imgs/hdl_flow.png" style="width:30%">
-<figcaption>Fig.1 - Digital Hardware Design Workflow.</figcaption>
-</figure>
-</center>
-<p align="justify">SystemVerilog is a hardware description language (HDL) that is widely used in digital hardware design. It is a combination of the Verilog HDL, which is used to describe the behavior of digital circuits, and the SystemC language, which is used to model hardware systems.</p>
+    <p align="justify"><a href="#maintitle">Verilog</a>
+     is a hardware description language used to model electronic systems, primarily at the register-transfer level, and now a subset of SystemVerilog.</p>
+    <p align="justify"><a href="#maintitle">RTL (Register-Transfer Level)</a>
+     is a design abstraction which models a synchronous digital circuit in terms of the flow of digital signals (data) between hardware registers, and the logical operations performed on those signals. <strong>RTL: Synthesizable HDL/Verilog code</strong></p>
+    <p align="justify"><a href="#maintitle">Gate Level Netlist</a>
+    is a detailed textual representation of a circuit, describing the exact gates and connections between them used to implement the circuit’s design</p>
+    <p align="justify"><a href="#maintitle">Synthesis</a>
+     is the process in digital design that converts high-level abstract descriptions of circuits into optimized gate-level representations suitable for implementation.</p>
+<p align="justify"><a href="#maintitle">SystemVerilog</a>
+     is an extensive hardware description and verification language that enhances and extends Verilog with additional features for modeling, design, and testing of electronic systems. <strong>SystemVerilog comes with different always_ff/always_comb/always_latch block which makes the chance for RTL to Gate level (post synthesis) mismatch to be reduced. Verilog only has one general always block which makes synthesis not optimal.</strong></p>
 
-<p align="justify">SystemVerilog is used at various stages of the digital hardware design flow, including design, verification, and synthesis. It provides a comprehensive set of features for describing the behavior and structure of digital circuits, including object-oriented programming constructs, assertion language, and testbench constructs.</p>
-
-
-<ul>
-<li><p align="justify">In the design stage, SystemVerilog is used to describe the behavior of the digital circuit at a high level of abstraction. Designers use SystemVerilog to create a hardware model that simulates the behavior of the digital system.</p></li>
-
-<li><p align="justify">In the verification stage, SystemVerilog is used to create testbenches that verify the functionality of the digital circuit. Testbenches are used to simulate the behavior of the digital circuit under different conditions and to ensure that the circuit meets its specifications.</p></li>
-
-<li><p align="justify">Finally, in the synthesis stage, SystemVerilog is used to generate the gate-level netlist that describes the structure of the digital circuit. The netlist is used to program the hardware components that implement the digital system.</p></li>
-</ul>
+    
+ <div class="example">
+     <ul><li><p align="justify"><b>Verilog</b></p></li></ul>
+<h3>Notes:</h3>
+     
+     <ol>
+         <li><b>Purpose and Abstraction Levels:</b> <br />
+         <ul>
+             <li><p align="justify"><b>Verilog</b> is primarily a low-level hardware description language (HDL). It focuses on describing the intricate behavior of hardware components in detail.</p></li>
+             <li><p align="justify"><b>SystemVerilog,</b> on the other hand, provides higher-level abstractions. It allows for more concise and efficient modeling of complex electronic systems.</p></li>
+         </ul>
+         </li>
+    <li><b>Functionality:</b> <br />
+        <ul><li><p align="justify"><b>Verilog</b> <br />• Used to model electronic systems.<br />
+• Supports various abstract levels (e.g., transition level registration, gate level).<br />
+• Originally developed as a proprietary language and later standardized by IEEE.</p></li>
+        <li><p align="justify"><b>SystemVerilog</b></p></li>
+        </ul>
+        Creating and simulating algorithms that meet the specifications, often using high-level tools like MATLAB. </li>
+    <li><b>Modeling and Simulation:</b> <br />Developing a high-level model, usually in SystemVerilog or VHDL, and simulating it to verify functionality. </li>
+    <li><b>Synthesis:</b> <br />Translating the high-level model into a gate-level netlist using synthesis tools. </li>
+    <li><b>Place and Route:</b> <br /> Arranging the synthesized gates on the silicon and routing the connections between them.</li>
+    <li><b>Verification:</b> <br /> Ensuring the design meets all specifications and performs correctly through extensive testing.</li>
+    <li><b>Physical Design:</b> <br />Finalizing the layout for fabrication, including considerations for timing, power, and area. </li>
+    <li><b>Fabrication:</b> <br /> Manufacturing the physical chip based on the design.</li>
+        <li><b>Testing and Validation:</b> <br />Post-fabrication testing to ensure the chip operates as intended. </li>
+        <li><b>Integration:</b> <br /> Embedding the DSP accelerator into the target system and performing final system-level testing</li></ol>
+<div class="tablewrap"><table>
+    <tr>
+        <th>Feature</th>
+        <th class="">Verilog</th>
+        <th class="">SystemVerilog</th>
+    </tr>
+    <tr>
+        <td>Data Types</td>
+        <td class="">Limited data types (e.g., wire, reg)</td>
+        <td class="hl">Extended data types (e.g., logic, int, string, enums)</td>
+    </tr>
+    <tr>
+        <td>Object-Oriented Programming</td>
+        <td class="">Not supported</td>
+        <td class="hl">Supported (e.g., classes, inheritance)</td>
+    </tr>
+    <tr>
+        <td>Concurrency</td>
+        <td class="">Supports basic concurrency mechanisms</td>
+        <td class="hl">Enhanced concurrency mechanisms (e.g., program blocks, interfaces)</td>
+    </tr>
+    <tr>
+        <td>Assertions</td>
+        <td class="">Limited support</td>
+        <td class="hl">Comprehensive support for assertions (e.g., immediate, concurrent assertions)</td>
+    </tr>
+    <tr>
+        <td>Randomization</td>
+        <td class="">Not supported</td>
+        <td class="hl">Supports constrained randomization</td>
+    </tr>
+    <tr>
+        <td>Debugging Features</td>
+        <td class="">Limited</td>
+        <td class="hl">Enhanced (e.g., $display, $monitor with more capabilities)</td>
+    </tr>
+    <tr>
+        <td>Verification Methodology</td>
+        <td class="">Less suited for advanced verification</td>
+        <td class="hl">Better suited for advanced verification (e.g., UVM compatibility)</td>
+    </tr>
+</table>
+</div>
+     </div>
+     
+    
     
     
 <h3 id="slides"> Warm Up</h3>
